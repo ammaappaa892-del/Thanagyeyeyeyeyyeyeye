@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anneyyyy Thangachiiii Special 💖</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@700&display=swap');
+        
+        body { font-family: 'Poppins', sans-serif; }
+        .title-font { font-family: 'Dancing Script', cursive; }
+        
+        .page { display: none; }
+        .page.active { display: flex; }
+        
+        .bounce-gif { animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        
+        .wiggle { animation: wiggle 3s infinite; }
+        @keyframes wiggle { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
+        
+        .letter { animation: popIn 0.6s ease-out; }
+        @keyframes popIn { from { opacity: 0; transform: scale(0.3) translateY(100px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+        
+        .envelope { transition: all 0.4s; }
+        .envelope:hover { transform: scale(1.1) rotate(5deg); }
+        
+        .slider-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
+        .slider-open .slider-content { max-height: 500px; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-200 via-orange-100 to-yellow-200 min-h-screen flex items-center justify-center overflow-hidden">
+
+    <!-- PAGE 1 -->
+    <div id="page1" class="page active w-full h-screen flex flex-col items-center justify-center text-center p-8">
+        <div class="relative">
+            <img src="https://media.giphy.com/media/26ufn1p4p0c3lG8pO/giphy.gif" alt="Bouncy Pomeranian thinking" class="bounce-gif w-48 h-48 mx-auto mb-6 rounded-3xl shadow-2xl border-8 border-white">
+            <div class="absolute -top-4 -right-4 bg-white text-pink-600 text-3xl px-6 py-2 rounded-2xl shadow-xl rotate-12 title-font">💭</div>
+        </div>
+        <h1 class="text-5xl md:text-7xl title-font text-pink-700 mb-8 leading-tight">Neenga dha anneyyyy<br>sonna udanpirapaaaaaaaa ????</h1>
+        <div class="flex gap-6">
+            <button onclick="answerYes(1)" class="bg-green-500 hover:bg-green-600 text-white text-3xl px-12 py-6 rounded-3xl shadow-2xl transform hover:scale-110 transition">YES 💖</button>
+            <button onclick="answerNo()" class="bg-red-500 hover:bg-red-600 text-white text-3xl px-12 py-6 rounded-3xl shadow-2xl transform hover:scale-110 transition">NO 😢</button>
+        </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div id="page2" class="page w-full h-screen flex flex-col items-center justify-center text-center p-8">
+        <img src="https://media.giphy.com/media/26ufn1p4p0c3lG8pO/giphy.gif" alt="Bouncy Pomeranian" class="bounce-gif w-40 h-40 mx-auto mb-6">
+        <h1 class="text-5xl md:text-6xl title-font text-purple-700 mb-10">unga anneyyyy ta solladhingaa<br>ana neenga evlo cute ah irukinga nu therinjukajumaaaaaa ???</h1>
+        <div class="flex gap-6">
+            <button onclick="answerYes(2)" class="bg-green-500 hover:bg-green-600 text-white text-3xl px-12 py-6 rounded-3xl shadow-2xl">YES 💕</button>
+            <button onclick="answerNo()" class="bg-red-500 hover:bg-red-600 text-white text-3xl px-12 py-6 rounded-3xl shadow-2xl">NO 😢</button>
+        </div>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div id="page3" class="page w-full h-screen flex flex-col items-center justify-center text-center p-8 bg-gradient-to-br from-purple-200 to-pink-200">
+        <h1 class="text-6xl md:text-8xl title-font text-pink-600 mb-8 animate-pulse">Unlimited Cutnesss</h1>
+        <h2 class="text-5xl md:text-7xl title-font text-amber-600">Ulaga alagiii neenga dhan 💖</h2>
+        <button onclick="goToPage(4)" class="mt-16 bg-white text-pink-600 text-4xl px-16 py-8 rounded-3xl shadow-2xl flex items-center gap-4 hover:scale-110 transition">
+            Continue <span class="text-5xl">➡️</span>
+        </button>
+    </div>
+
+    <!-- PAGE 4 (MAIN MAGIC) -->
+    <div id="page4" class="page w-full h-screen flex flex-col items-center justify-center p-8 relative overflow-hidden">
+        
+        <!-- Left Top Slider -->
+        <div class="absolute top-8 left-8 bg-white rounded-3xl shadow-2xl p-6 w-80 cursor-pointer slider" onclick="toggleSlider()">
+            <div class="flex items-center justify-between text-3xl font-bold text-amber-600">
+                <span>Indhanga ungaluku pudicha...</span>
+                <span class="text-4xl transition-transform duration-300" id="arrow">⬇️</span>
+            </div>
+            <div id="sliderContent" class="slider-content mt-6 grid grid-cols-2 gap-4">
+                <img src="Gulabjamun.jpg" alt="Gulab Jamun" class="rounded-2xl shadow-lg">
+                <img src="Diarymilk.jpg" alt="Dairy Milk Silk Roast Almond" class="rounded-2xl shadow-lg">
+                <img src="Munch.jpg" alt="Munch Max Crunchies" class="rounded-2xl shadow-lg">
+                <img src="Kitkat.jpg" alt="KitKat" class="rounded-2xl shadow-lg">
+            </div>
+        </div>
+
+        <!-- Middle Bouquet -->
+        <div class="relative z-10">
+            <img src="https://media.giphy.com/media/3o7TKsQ8s4Qb3iE0kI/giphy.gif" alt="Tulip Bouquet Waving" class="wiggle w-96 h-96 mx-auto">
+        </div>
+
+        <!-- Right Side Gift Boxes -->
+        <div class="absolute right-8 top-1/3 flex flex-col gap-6">
+            <img src="https://media.giphy.com/media/26BRv0Z8v4v4v/giphy.gif" alt="Gift Box" class="w-28 h-28 animate-bounce">
+            <img src="https://media.giphy.com/media/26BRv0Z8v4v4v/giphy.gif" alt="Gift Box" class="w-28 h-28 animate-bounce" style="animation-delay: 0.5s">
+            <img src="https://media.giphy.com/media/26BRv0Z8v4v4v/giphy.gif" alt="Gift Box" class="w-28 h-28 animate-bounce" style="animation-delay: 1s">
+        </div>
+
+        <!-- Envelope -->
+        <div onclick="openLetter()" class="absolute bottom-12 right-12 bg-white p-8 rounded-3xl shadow-2xl envelope cursor-pointer flex flex-col items-center">
+            <div class="text-8xl mb-4">📨</div>
+            <p class="text-3xl font-bold text-rose-600">Click me!</p>
+        </div>
+
+        <!-- Letter Pop-up -->
+        <div id="letter" class="hidden fixed inset-0 flex items-center justify-center bg-black/70 z-50">
+            <div class="letter bg-white max-w-md w-full mx-4 p-10 rounded-3xl shadow-2xl relative">
+                <button onclick="closeLetterManually()" class="absolute top-4 right-4 text-3xl text-red-500">✕</button>
+                <h2 class="text-4xl title-font text-pink-700 text-center mb-6">Neenga dhana anneyyyy sollite irundha thangachiiiii 💕</h2>
+                <p class="text-2xl leading-relaxed text-gray-700 text-center">
+                    Idhu vara na unna edhachu kashtapadithirundha...<br>
+                    <span class="text-rose-600 font-bold">Mannichuruuu en thangayeeeeee pleaseeee 🥺</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Final Bouncy Pomeranian after letter -->
+        <div id="finalGif" class="hidden fixed inset-0 flex flex-col items-center justify-center bg-black/80 z-50 text-white">
+            <img src="https://media.giphy.com/media/26ufn1p4p0c3lG8pO/giphy.gif" alt="Bouncy Pomeranian crying" class="w-80 h-80 bounce-gif">
+            <p class="text-5xl title-font text-center mt-8 max-w-lg">Anneyyyyy ungala kashtapadithitaaarunu engata solli rmbooo aluvaru... avara mannichrnga pleaseeee 🥹💖</p>
+        </div>
+    </div>
+
+<script>
+    function tailwindInit() { /* already loaded */ }
+    
+    function showPage(pageNum) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById('page' + pageNum).classList.add('active');
+    }
+    
+    function answerYes(fromPage) {
+        if (fromPage === 1) showPage(2);
+        else if (fromPage === 2) showPage(3);
+    }
+    
+    function answerNo() {
+        alert("Dei macha no nu sollaadha da... yes thottu anneyyyy ku surprise pannu 💕");
+    }
+    
+    function goToPage(page) {
+        showPage(page);
+    }
+    
+    let sliderOpen = false;
+    function toggleSlider() {
+        const slider = document.querySelector('.slider');
+        sliderOpen = !sliderOpen;
+        if (sliderOpen) slider.classList.add('slider-open');
+        else slider.classList.remove('slider-open');
+        document.getElementById('arrow').style.transform = sliderOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+    
+    function openLetter() {
+        document.getElementById('letter').classList.remove('hidden');
+        document.getElementById('letter').classList.add('flex');
+        
+        // Auto close after 10 seconds
+        setTimeout(() => {
+            closeLetter();
+        }, 10000);
+    }
+    
+    function closeLetter() {
+        document.getElementById('letter').classList.add('hidden');
+        document.getElementById('letter').classList.remove('flex');
+        
+        // Show final gif
+        document.getElementById('finalGif').classList.remove('hidden');
+        document.getElementById('finalGif').classList.add('flex');
+    }
+    
+    function closeLetterManually() {
+        closeLetter();
+    }
+    
+    // Start with page 1
+    window.onload = () => {
+        showPage(1);
+    };
+</script>
+</body>
+</html>
